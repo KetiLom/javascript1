@@ -1,19 +1,15 @@
 ﻿ //1. დაწერეთ ფუნქცია, რომელიც პარამეტრად მიიღებს ერთ მთელ რიცხვს და დააბრუნებს true -ს თუ რიცხვი არის ლუწი ან false -ს თუ რიცხვი არის კენტი.
 function checkdOddEven(num) {
-    var num = parseInt(prompt("1. Enter number to check even or odd:"));
-    if (num % 2 == 0) {
-        return console.log(num + ' is an Even number');
-    } else {
-        return console.log(num + ' is an Odd number');
-    }
+    //var num = parseInt(prompt("1. Enter number to check even or odd:"));
+    
+    return console.log(num % 2 == 0)
 }
 console.log(checkdOddEven(3));
-
 //2. დაწერეთ ფუნქცია, რომელიც პარამეტრად მიიღებს ორ რიცხვს - მართკუთხედის გვერდების ზომებს და დააბრუნებს მართკუთხედის ფართობს.
 function calcArea(a,b)
 {
-    var a = parseInt(prompt("2.Enter length of rectangle to calculate area:"));
-    var b = parseInt(prompt("Enter width of rectangle:"));
+ //   var a = parseInt(prompt("2.Enter length of rectangle to calculate area:"));
+//    var b = parseInt(prompt("Enter width of rectangle:"));
     return (a * b);
 }
 console.log(calcArea(2, 3));
@@ -27,8 +23,8 @@ function random(num) {
 console.log(random());
 //5. დაწერეთ ფუნქცია, რომელიც მიიღებს ორ რიცხვს პარამეტრად (a, b)  და დააბრუნებს შემთხვევით რიცხვს a -დან b -მდე შუალედში.
 function randombetween(a, b) {
-    var a = parseInt(prompt("Enter first number:"));
-    var b = parseInt(prompt("Enter second number:"));
+//  var a = parseInt(prompt("Enter first number:"));
+//  var b = parseInt(prompt("Enter second number:"));
     return Math.floor(Math.random() * (b - a)) + a;
 }
 console.log(randombetween(2, 5));
@@ -37,7 +33,7 @@ console.log(randombetween(2, 5));
 function randomName(gender){
     var girls=["Ana", "Barbare", "Diana", "Kira", "Maia", "Mariami", "Miranda", "Elene", "Takov", "Mia"];
     var boys=['Giga', 'Zura', 'Sandro', 'Dachi', 'Kosta', 'Andro', 'Alex', 'Ilia', 'Misha', 'Dato'];
-    var gender = prompt("Enter Gender (girl or boy):");
+ //   var gender = prompt("Enter Gender (girl or boy):");
     var id = randombetween(0, 11)
     if (gender == 'girl') {
         return console.log(girls[id]);
@@ -49,16 +45,37 @@ console.log(randomName('girl'));
 
 //7. დაწერეთ ფუნქცია, რომელიც პარამეტრად მიიღებს წელს (მაგალითად 2021) და დააბრუნებს true-ს თუ ეს წელი არის ნაკიანი ან false-ს წინააღმდეგ შემთხვევაში.
 function leapYear(year) {
-    var year = parseInt(prompt("Enter year:"));
+//    var year = parseInt(prompt("Enter year:"));
     var boolean = new Date(year, 2, 0).getDate();
     return console.log(boolean == 29)
 }
     console.log(leapYear(2021));
-//8. დაწერეთ ფუნქცია, რომელიც პარამეტრად მიიღებს მართკუთხა პარალელეპიპედის გვერდების ზომებს და სიმაღლეს (a, b, c) და დააბრუნებს ფიგურის მოცულობას. მოცულობის გამოსათვლელად დაიხმარეთ #2 პუნქტში დაწერილი ფუნქცია.*/
+//8. დაწერეთ ფუნქცია, რომელიც პარამეტრად მიიღებს მართკუთხა პარალელეპიპედის გვერდების ზომებს და სიმაღლეს (a, b, c) და დააბრუნებს ფიგურის მოცულობას. მოცულობის გამოსათვლელად დაიხმარეთ #2 პუნქტში დაწერილი ფუნქცია.
 function value(a, b, c) {
-    var a = parseInt(prompt("Enter width:"));
-    var b = parseInt(prompt("Enter height:"));
-    var c = parseInt(prompt("Enter length:"));
+//var a = parseInt(prompt("Enter width:"));
+//    var b = parseInt(prompt("Enter height:"));
+//    var c = parseInt(prompt("Enter length:"));
     return console.log(a * b * c);
 }
 console.log(value(2, 3, 4));
+//დაწერეთ რეკურსიული ფუნქცია, რომელიც პარამეტრად მიიღებს ორ რიცხვს (a, b), 
+//რეკურსიის გამოყენებით შეამოწმებს ყველა რიცხვს a დან b მდე და დალოგავს მხოლოდ კენტ რიცხვებს. (გამოიყენეთ #1 პუნქტში დაწერილი ფუნქცია)
+function logOddNumbers(a, b) {
+//    var a = parseInt(prompt("Enter a:"));
+    //var b = parseInt(prompt("Enter b:"));
+    var odd = checkdOddEven(a)
+    if (odd) {
+        console.log(a + 1);
+        let nextNumber = a + 2;
+        if (a + 2 < b) {
+            logOddNumbers(nextNumber, b);
+        }
+    } else {
+        console.log(a);
+        let nextNumber = a + 2;
+        if (a + 2 < b) {
+            logOddNumbers(nextNumber, b);
+        }
+    }
+}
+console.log(logOddNumbers(10, 16));
