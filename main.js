@@ -1,6 +1,6 @@
 ﻿ //1. დაწერეთ ფუნქცია, რომელიც პარამეტრად მიიღებს ერთ მთელ რიცხვს და დააბრუნებს true -ს თუ რიცხვი არის ლუწი ან false -ს თუ რიცხვი არის კენტი.
 function checkdOddEven(num) {
-    var num = parseInt(prompt("Enter number:"));
+    var num = parseInt(prompt("1. Enter number to check even or odd:"));
     if (num % 2 == 0) {
         return console.log(num + ' is an Even number');
     } else {
@@ -12,7 +12,7 @@ console.log(checkdOddEven(3));
 //2. დაწერეთ ფუნქცია, რომელიც პარამეტრად მიიღებს ორ რიცხვს - მართკუთხედის გვერდების ზომებს და დააბრუნებს მართკუთხედის ფართობს.
 function calcArea(a,b)
 {
-    var a = parseInt(prompt("Enter length of rectangle:"));
+    var a = parseInt(prompt("2.Enter length of rectangle to calculate area:"));
     var b = parseInt(prompt("Enter width of rectangle:"));
     return (a * b);
 }
