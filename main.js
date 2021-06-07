@@ -102,7 +102,7 @@ function exponent(a, b) {
         }
     if (b > 0) {
         return console.log(result)
-    } else { return console.log(parseFloat(1/result)) }
+    } else { return console.log(1/result) }
 }
 
 console.log(exponent(2,-2));
