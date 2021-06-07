@@ -63,20 +63,28 @@ console.log(value(2, 3, 4));
 function logOddNumbers(a, b) {
 //    var a = parseInt(prompt("Enter a:"));
     //var b = parseInt(prompt("Enter b:"));
-    var odd = checkdOddEven(a)
-    if (odd) {
-        console.log(a + 1);
-        let nextNumber = a + 2;
-        if (a + 2 < b) {
-            logOddNumbers(nextNumber, b);
-        }
-    } else {
-        console.log(a);
-        let nextNumber = a + 2;
-        if (a + 2 < b) {
-            logOddNumbers(nextNumber, b);
-        }
-    }
+    if (a < b) {
+        var odd = checkdOddEven(a);
+        if (odd = 'True') {
+            console.log(a + 1);
+            let nextNumber = a + 2;
+            if (a + 2 < b) {
+                logOddNumbers(nextNumber, b);
+            }
+        } else {
+                console.log(a);
+                let nextNumber = a + 2;
+                if (a + 2 < b) {
+                    logOddNumbers(nextNumber, b);
+                }
+            }
+        } else
+            if (a = b) {
+                return console.log('Enter different numbers');
+            }
+            else {
+                return console.log('The first number must be less than last');
+            }
 }
 console.log(logOddNumbers(10, 16));
 //დაწერეთ რეკურსიული ფუნქცია, რომელიც პარამეტრებად მიიღებს ორ რიცხვს (x, y) და დააბრუნებს x ხარისხად y -ს. 
@@ -98,4 +106,3 @@ function exponent(a, b) {
 }
 
 console.log(exponent(2,-2));
-
