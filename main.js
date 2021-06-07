@@ -79,3 +79,23 @@ function logOddNumbers(a, b) {
     }
 }
 console.log(logOddNumbers(10, 16));
+//დაწერეთ რეკურსიული ფუნქცია, რომელიც პარამეტრებად მიიღებს ორ რიცხვს (x, y) და დააბრუნებს x ხარისხად y -ს. 
+//მაგალითად თუ ფუნქციამ მიიღო პარამეტრად 2 და 5 უნდა დააბრუნოს 2 - ს მეხუთე ხარისხი ანუ 32. გამოიყენეთ რეკურსია.
+
+function exponent(a, b) {
+    var result = 1;
+    var count;
+    if (b === 0) {
+        return result;
+;
+    } else 
+        for (count = 1; count<=Math.abs(b); count++){
+            result = a * result;
+        }
+    if (b > 0) {
+        return console.log(result)
+    } else { return console.log(parseFloat(1/result)) }
+}
+
+console.log(exponent(2,-2));
+
